@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace InheritancePolymorphism
 {
-    public class Animal
+    internal class Swan : Bird
     {
+        public double NeckLength { get; set; }
     }
 }
