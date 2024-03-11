@@ -15,5 +15,13 @@ namespace InheritancePolymorphism
             Console.WriteLine("Grunt");
         }
 
+        public override string Stats()
+        {
+            string allPropertiesAsText = base.Stats();
+
+            allPropertiesAsText += $"\nNumber of Spikes: {NumberOfSpikes}";
+
+            return allPropertiesAsText;
+        }
     }
 }

@@ -15,5 +15,13 @@ namespace InheritancePolymorphism
             Console.WriteLine("Neigh");
         }
 
+        public override string Stats()
+        {
+            string allPropertiesAsText = base.Stats();
+
+            allPropertiesAsText += $"\nTail color: {tailColor}";
+
+            return allPropertiesAsText;
+        }
     }
 }

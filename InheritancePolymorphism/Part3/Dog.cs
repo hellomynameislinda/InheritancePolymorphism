@@ -14,5 +14,20 @@ namespace InheritancePolymorphism
         {
             Console.WriteLine("Bark");
         }
+
+        public override string Stats()
+        {
+            string allPropertiesAsText = base.Stats();
+
+            allPropertiesAsText += $"\nPattern: {Pattern}";
+
+            return allPropertiesAsText;
+        }
+
+        public string PetName()
+        {
+            return "Pet name: Vovven";
+        }
+
     }
 }

@@ -14,5 +14,15 @@ namespace InheritancePolymorphism
         {
             Console.WriteLine("Chirp");
         }
+
+        public override string Stats()
+        {
+            string allPropertiesAsText = base.Stats();
+
+            allPropertiesAsText += $"\nWing span: {WingSpan}";
+
+            return allPropertiesAsText;
+        }
     }
+
 }

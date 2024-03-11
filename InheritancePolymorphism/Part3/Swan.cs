@@ -9,5 +9,14 @@ namespace InheritancePolymorphism
     internal class Swan : Bird
     {
         public double NeckLength { get; set; }
+
+        public override string Stats()
+        {
+            string allPropertiesAsText = base.Stats();
+
+            allPropertiesAsText += $"\nNeck Length: {NeckLength}";
+
+            return allPropertiesAsText;
+        }
     }
 }

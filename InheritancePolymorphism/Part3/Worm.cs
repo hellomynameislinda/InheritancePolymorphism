@@ -15,5 +15,13 @@ namespace InheritancePolymorphism
             Console.WriteLine("Pop");
         }
 
+        public override string Stats()
+        {
+            string allPropertiesAsText = base.Stats();
+
+            allPropertiesAsText += $"\nLength: {length}";
+
+            return allPropertiesAsText;
+        }
     }
 }

@@ -9,5 +9,14 @@ namespace InheritancePolymorphism
     internal class Flamingo : Bird
     {
         public string ShadeOfPink { get; set; }
+
+        public override string Stats()
+        {
+            string allPropertiesAsText = base.Stats();
+
+            allPropertiesAsText += $"\nShade of Pink: {ShadeOfPink}";
+
+            return allPropertiesAsText;
+        }
     }
 }

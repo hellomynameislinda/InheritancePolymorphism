@@ -14,5 +14,13 @@ namespace InheritancePolymorphism
             Console.WriteLine("Howl");
         }
 
+        public override string Stats()
+        {
+            string allPropertiesAsText = base.Stats();
+
+            allPropertiesAsText += $"\nFlock size: {flockSize}";
+
+            return allPropertiesAsText;
+        }
     }
 }
