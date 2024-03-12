@@ -10,7 +10,7 @@ namespace InheritancePolymorphism
     {
         public void Talk()
         {
-            DoSound();
+            Console.WriteLine($"Hello I'm {Name}");
         }
     }
 }

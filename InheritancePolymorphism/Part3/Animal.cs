@@ -51,6 +51,10 @@ namespace InheritancePolymorphism
         }
     }
 
+
+    // Not enough code to warrant a file of it's own ;)
+    // IRL there would be a better place for this one, and it might have fit in better in the Person class file,
+    // but since we only apply it in regards to animals this will do.
     internal interface IPerson
     {
         void Talk();

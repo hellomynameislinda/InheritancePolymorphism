@@ -21,20 +21,22 @@ namespace InheritancePolymorphism
             // ha varit Animal.
 
             // 3.4 13F Funktionen Stats() körs från den klass objektet tillhör (tex Bird). I
-            // funktionen körs först Stats() från klassen som ärvts (Animal) som returnerar en
-            // sträng med de properties som finns på föräldraklassen, i den aktuella Stats()-
+            // funktionen anropas först Stats() från klassen som ärvts (Animal) som returnerar en
+            // sträng med de properties som finns på föräldraklassen. I den aktuella Stats()-
             // funktionen (Birds) läggs sen de properties som finns på den nivån till i strängen
             // innan den returneras.
             // För klasserna som ärver Bird (tex Flamingo) görs samma sak fast i ytterligare ett
             // steg, dvs tre strängar med properties slås ihop för att visa samtliga properties
-            // för ett Flamingo-objekt.
+            // för ett Flamingo-objekt, Stats() i Flamingo-klassen anropar Stats() i Bird-klassen
+            // som i sin tur anropar Stats() i Animal-klassen, vardera returnerar en sammanslagen
+            // sträng med samtliga properties.
             // Undantaget är Wolfman, som inte har några egna properties, och därmed ingen egem
             // Stats()-funktion, då körs funktionen som ligger på föräldern Wolf (som i sin tur
             // kör Stats() från Animal, enligt ovanstående princip.
 
             // 3.4 17F Den Dog-specifika funktionen går inte att nå eftersom den inte är en del
             // av Animal. För att nå den måste Dog-castas till Dog i loopen. Se stats-loopen.
-            // Cast också används för att göra if-satsen för att skriva ut enbart hundar, så där
+            // Cast också används för att göra if-satsen för att skriva ut enbart hundar, så
             // den hundspecifika funktionen ligger även där.
 
 
@@ -108,13 +110,15 @@ namespace InheritancePolymorphism
             {
                 new Hedgehog { Name = "Spikey", Age = 5, Color = "Brown", Habitat = "Grass", Weight = 0.512, NumberOfSpikes = 4589 },
                 new Worm { Name = "Maisy", Age = 1, Color = "Beige", Habitat = "Soil", Weight = 0.010, length = 10 },
+                new Wolfman { Name = "Steve", Age = 23, Color = "Light Gray", Habitat = "The City", Weight = 68, flockSize = 2 },
                 new Horse { Name = "Jolly Jumper", Age = 12, Color = "White", Habitat = "Paddoc", Weight = 521, tailColor = "Black" },
+                new Swan { Name = "Mister Long Neck", Age = 2, Color = "White", Habitat = "Water", Weight = 9.8, WingSpan = 251, NeckLength = 51 },
                 new Dog { Name = "Ratata", Age = 12, Color = "Brown", Habitat = "Domestic", Weight = 9.24, Pattern = "Spotted"},
                 new Bird { Name = "Peep", Age = 3, Color = "Blue", Habitat = "Sky", Weight = 0.98, WingSpan = 18 },
                 new Wolf { Name = "Big Bad", Age = 7, Color = "Gray", Habitat = "Forrest", Weight = 45, flockSize = 3 },
                 new Flamingo { Name = "Fanny", Age = 5, Color = "Pink", Habitat = "Beach", Weight = 3.2, WingSpan = 95, ShadeOfPink = "Light" },
                 new Swan { Name = "Miss Long Neck", Age = 2, Color = "White", Habitat = "Water", Weight = 8.6, WingSpan = 232, NeckLength = 50 },
-                new Wolfman { Name = "Mike", Age = 35, Color = "Gray", Habitat = "The City", Weight = 72, flockSize = 1 },
+                new Wolfman { Name = "Mike", Age = 35, Color = "Gray", Habitat = "The City", Weight = 72, flockSize = 2 },
                 new Pelican { Name = "Pinky", Age = 4, Color = "White", Habitat = "Sky", Weight = 5.8, WingSpan = 251, BeakLength = 35 },
                 new Dog { Name = "Pluto", Age = 6, Color = "Brown", Habitat = "Domestic", Weight = 8.45, Pattern = "Spotted"}
             };
